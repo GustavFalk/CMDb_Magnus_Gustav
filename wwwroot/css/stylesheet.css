@@ -205,7 +205,35 @@ body{
     overflow-y:scroll;
     
 }
+.result-item {
+    display: flex;
+    flex: 1;
+    border-bottom: 1px groove #8C7848;
+}
 
+.result-poster {
+    flex: 0.5;
+}
+
+.result-img {
+    width: 50%;
+    padding-left: 15%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+.result-info {
+    flex: 3;
+    align-self: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 3%;
+}
+
+.result-rating {
+    flex: 1;
+}
+
+/*--------Scrollbar---------*/
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -224,33 +252,7 @@ body{
     height: 10px;
 }
 
-.result-item {
-    display: flex;
-    flex: 1;
-    border-bottom: 1px groove #8C7848;
-}
 
-.result-poster {
-    flex: 0.5;
-}
-
-.result-img {
-    width: 50%;   
-    padding-left: 15%;
-    padding-bottom: 3%;
-    padding-top: 3%;
-}
-
-.result-info {
-    flex: 3;
-    align-self: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-left: 3%;
-}
-
-.result-rating {
-    flex: 1;
-}
 
  /*-------Movieresult---------*/
 
@@ -416,11 +418,9 @@ body{
 
 /*//----------ERROR---------//*/
 
-#lionel-container{
-    
+#lionel-container{    
    align-content:center;
    padding-left: 35%
-
 }
 
 #lionel-img {

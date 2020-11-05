@@ -29,7 +29,8 @@ namespace CMDb_MGM.Controllers
             IndexViewModel viewModel = new IndexViewModel(await omdbrepo.GetMovieListOMDB(CMDbToplist),CMDbToplist);
             return View(viewModel);
             }
-            catch(Exception) {
+            //Ifall något går fel så skickas användaren till Error vyn.
+            catch (Exception) {
                 return RedirectToAction("Index", "Error");
             }
         }

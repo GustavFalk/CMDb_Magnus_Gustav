@@ -27,6 +27,7 @@ namespace CMDb_MGM.Controllers
                 MovieInfoViewModel viewModel = new MovieInfoViewModel(await cmdbrepo.GetMovieCMDb(id), await omdbrepo.GetMovieByID(id));
                 return View(viewModel);
             }
+            //Ifall något går fel så skickas användaren till Error vyn.
             catch (Exception)
             {
                 return RedirectToAction("Index", "Error");

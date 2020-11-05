@@ -19,6 +19,8 @@ namespace CMDb_MGM.Test
             baseUrl = $"{webHostEnvironment.ContentRootPath}\\Test\\Mockdata\\";
 
         }
+
+        //Genererar en film att skicka till vy
         public async Task<MovieDTO> GetMovieCMDb(string path)
         {
             string testFile = "movieJson.json";
@@ -27,6 +29,7 @@ namespace CMDb_MGM.Test
             return result;
         }
 
+        //Generar filmlista att skicka till vyn
         public async Task<List<MovieDTO>> GetTopmoviesMovieCMDb(string path)
         {
             string testFile = "movielistJson.json";

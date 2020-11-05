@@ -10,6 +10,7 @@ namespace CMDb_MGM.Models.ViewModels
     {
         public List<MovieDTO> MovieTopList { get; set; }
 
+        //Constructor som bakar in två listor som kommer från olika håll och lägger den i MovieTopList. Ger även varje film en plats i toplistan.
         public IndexViewModel(List<MovieDTO> OMDbToplist, List<MovieDTO> CMDbToplist )
         {
             int i = 0, toplistplacement = 1;

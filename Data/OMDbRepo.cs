@@ -19,6 +19,7 @@ namespace CMDb_MGM.Data
             baseUrl = config.GetValue<string>("OMDbApi:baseURL");
         }
 
+        //Genererar en film utifrån en sträng bestående av IMDbID
         public async Task<MovieDTO> GetMovieByID(string ID)
         {
             using(HttpClient client = new HttpClient())
@@ -33,11 +34,15 @@ namespace CMDb_MGM.Data
 
         }
 
+        //Hämtar en filmlista från OMDb med hjälp av en annan filmlista. 
         public async Task<List<MovieDTO>> GetMovieListOMDB(List<MovieDTO> listOfID)
         {
             List<MovieDTO> movielist = new List<MovieDTO>();
-           
-            foreach(MovieDTO x in listOfID)
+
+            //Den loopar igenom listan som kommer in, och tar varje film i listans IMDbID och med hjälp av ovan Metod genererar vi en film av den.
+            //den filmen hamnar sedermera i en ny lista. När loopen är klar så returneras den nya filmlistan.
+            
+            foreach (MovieDTO x in listOfID)
             {
                 MovieDTO movie = await GetMovieByID(x.IMDbID);
                 movielist.Add(movie);
@@ -46,6 +51,8 @@ namespace CMDb_MGM.Data
             return movielist;
         }
 
+        //En metod som generar en filmlista med hjälp av ett sökord från OMDb. den plockar ut en klass av "SearchresultDTO" och tar listan
+        //från den och skickar ut. Då vymodellerna enbart använder sig av filmlistor eller filmer.
         public async Task<List<MovieDTO>> GetSearchResultsOMDB(string search)
         {
             using (HttpClient client = new HttpClient())

@@ -14,19 +14,23 @@ namespace CMDb_MGM
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+      
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //--Repon--//
+
             services.AddScoped<IOMDbRepo, OMDbRepo>();
             services.AddScoped<ICMDbRepo, CMDbRepo>();
+
+            //--Mockrepon--//
+
             //services.AddScoped<IOMDbRepo, OMDbMockRepo>();
             //services.AddScoped<ICMDbRepo, CMDbMockRepo>();
             
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+      
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -35,8 +39,7 @@ namespace CMDb_MGM
             }
           
             app.UseStaticFiles();
-            app.UseRouting();
-     
+            app.UseRouting();    
 
 
             app.UseEndpoints(endpoints =>

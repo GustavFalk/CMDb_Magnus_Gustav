@@ -20,7 +20,7 @@ namespace CMDb_MGM.Data
         }
 
        
-        // TODO: FIXA
+        
         public async Task<List<MovieDTO>> GetTopmoviesMovieCMDb(string path)
         {
             using (HttpClient client = new HttpClient())
