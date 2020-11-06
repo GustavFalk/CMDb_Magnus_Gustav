@@ -19,12 +19,18 @@ namespace CMDb_MGM.Controllers
             this.cmdbrepo = cmdbrepo;
         }
 
+
         [Route ("/movie")]
         public async Task<IActionResult> Index(string id)
         {
+            
             try
             {
-                MovieInfoViewModel viewModel = new MovieInfoViewModel(await cmdbrepo.GetMovieCMDb(id), await omdbrepo.GetMovieByID(id));
+                var cmdbMovie = cmdbrepo.GetMovieCMDb(id);
+                var omdbMovie = omdbrepo.GetMovieByID(id);
+                List<Task> tasks = new List<Task>() { cmdbMovie, omdbMovie };
+                await Task.WhenAll(tasks);
+                MovieInfoViewModel viewModel = new MovieInfoViewModel(cmdbMovie.Result, omdbMovie.Result);
                 return View(viewModel);
             }
             //Ifall något går fel så skickas användaren till Error vyn.

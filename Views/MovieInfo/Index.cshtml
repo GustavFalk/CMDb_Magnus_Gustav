@@ -1,21 +1,21 @@
 ﻿@model  CMDb_MGM.Models.ViewModels.MovieInfoViewModel
 
 <div id="movie-container">
-    <div class="poster"><img class="poster-img" src="@Model.Movie.Poster"></div>
+    <div onclick="window.open('@Model.Movie.Poster', '_blank');" class="poster"><img class="poster-img" src="@Model.Movie.Poster"></div>
     <div id="movie-description">
         <div class="description-item" id="movie-title">
-            <h1 style="font-size:2vw;">@Model.Movie.Title</h1>
-            <p style="font-size:1vw;">@Model.Movie.Rated | @Model.Movie.Runtime | @Model.Movie.Genre | @Model.Movie.Released</p>
+            <h1>@Model.Movie.Title</h1>
+            <p>@Model.Movie.Rated | @Model.Movie.Runtime | @Model.Movie.Genre | @Model.Movie.Released</p>
         </div>
-        <div class="description-item" id="movie-plot"> <p class="plot-txt" style="font-size:1.2vw;">@Model.Movie.Plot</p></div>
+        <div class="description-item" id="movie-plot"> <p class="plot-txt" >@Model.Movie.Plot</p></div>
         <a class="read" id="readmore" onclick="readMore()">Read More</a>
         <a class="read" id="readless" onclick="readLess()">Read Less</a>
         <div class="description-item" id="description-like">
             <input hidden="hidden" value="@Model.Movie.IMDbID" id="imdb-id" />
             <button class="vote-btn" id="like-btn"><img id="oscar" src="~/images/oscar.png" /><p id="like-txt">LIKE</p></button>
-            <p id="numberoflikes" style="font-size:1.75vw;"> @Model.Movie.numberOfLikes</p>
+            <p id="numberoflikes" > @Model.Movie.numberOfLikes</p>
             <button class="vote-btn" id="dislike-btn"><img id="razzie" src="~/images/razzie.png" /><p id="dislike-txt">DISLIKE</p></button>
-            <p id="numberofdislikes" style="font-size:1.75vw;"> @Model.Movie.numberOfDislikes</p>
+            <p id="numberofdislikes" > @Model.Movie.numberOfDislikes</p>
         </div>
     </div>
     <div id="actors-critics">

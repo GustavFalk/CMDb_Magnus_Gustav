@@ -15,6 +15,13 @@ a:visited{
     color:white;
 }
 
+h1 {
+    font-size: 2vw;
+}
+
+p{
+    font-size: 1vw;
+}
 
 body{
     background-color: rgb(214, 210, 210);
@@ -50,7 +57,8 @@ body{
     border-radius: 10px;
     padding: 1%;
     border: 1px solid black;
-    box-shadow: 0px 5px 10px -5px black;     
+    box-shadow: 0px 5px 10px -5px black;   
+    width: 60%;
 }
 
 #submit-btn{
@@ -181,34 +189,37 @@ body{
 .search-result {
     display: flex;
     flex: 1;
-    justify-content: left;
-   
+    justify-content: left;   
     Color: white;
     padding-left: 1.5%;
     padding-top: 1%;
 
 }
+ 
 
-#result-container {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    border: 5px solid #8C7848;
-    border-radius: 10px;
-    margin: -1% 15% 0 15%;
-    background-image: linear-gradient(black, rgb(41, 40, 40));
-    color: white;
-    box-shadow: 0px 5px 15px -5px black;
-    height: 90%;
-    position: absolute;
-    overflow-x:hidden;
-    overflow-y:scroll;
-    
-}
+    #result-container {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        border: 5px solid #8C7848;
+        border-radius: 10px;
+        margin: -1% 15% 0 15%;
+        background-image: linear-gradient(black, rgb(41, 40, 40));
+        color: white;
+        box-shadow: 0px 5px 15px -5px black;
+        height: 90%;
+        position: absolute;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
 .result-item {
     display: flex;
     flex: 1;
     border-bottom: 1px groove #8C7848;
+}
+
+.result-item:hover {
+    background-image: linear-gradient(to left, #8a6326, #8C7848);
 }
 
 .result-poster {
@@ -270,7 +281,10 @@ body{
 .poster {
     flex: 0.5;
     padding: 2%;
+    cursor: pointer;
 }
+
+
 
 .poster-img {
     width: 100%;
@@ -308,7 +322,7 @@ body{
 }
 
 .plot-txt {
-    font-size: 60%;    
+       
 }
 .read {
     text-align: end;
@@ -414,6 +428,7 @@ body{
 #numberoflikes, #numberofdislikes {
     padding-left: 3%;
     padding-right: 3%;
+    font-size: 1.75vw;
 }
 
 /*//----------ERROR---------//*/
@@ -430,3 +445,4 @@ body{
     border: 5px solid #8C7848;
     box-shadow: 0px 5px 15px -5px black;
 }
+

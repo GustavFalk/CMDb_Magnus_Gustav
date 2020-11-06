@@ -26,9 +26,10 @@ namespace CMDb_MGM.Controllers
         {try
             { 
             var CMDbToplist = await cmdbrepo.GetTopmoviesMovieCMDb("toplist?type=rating&count=5");
-            IndexViewModel viewModel = new IndexViewModel(await omdbrepo.GetMovieListOMDB(CMDbToplist),CMDbToplist);
+            IndexViewModel viewModel = new IndexViewModel(await omdbrepo.GetMovieListOMDB(CMDbToplist), CMDbToplist);
             return View(viewModel);
             }
+
             //Ifall något går fel så skickas användaren till Error vyn.
             catch (Exception) {
                 return RedirectToAction("Index", "Error");

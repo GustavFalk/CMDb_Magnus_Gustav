@@ -11,13 +11,13 @@
                             <img id="movie-img" src="@movie.Poster" />
                         </div>
                         <div id="movie-info">
-                            <div id="toplist-position"><h2 style="font-size:3vw;" >#@movie.toplistplacement</h2></div>
+                            <div id="toplist-position"><h1>#@movie.toplistplacement</h1></div>
                             <div id="movie-text">
-                                <h1 style="font-size:2vw"> @movie.Title </h1>
-                                <p style="font-size:1.5vw;">@movie.Rated | @movie.Runtime | @movie.Genre | @movie.Released</p>
+                                <h1> @movie.Title </h1>
+                                <p id="under-info" >@movie.Rated | @movie.Runtime | @movie.Genre | @movie.Released</p>
                             </div>
                             <div class="movie-rating">
-                                <p style="font-size:2vw;">Likes: @movie.numberOfLikes Dislikes: @movie.numberOfDislikes</p>
+                                <h1 id="slide-likes">Likes: @movie.numberOfLikes Dislikes: @movie.numberOfDislikes</h1>
                             </div>
                         </div>
                     </div>

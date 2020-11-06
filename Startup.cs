@@ -27,7 +27,7 @@ namespace CMDb_MGM
 
             //services.AddScoped<IOMDbRepo, OMDbMockRepo>();
             //services.AddScoped<ICMDbRepo, CMDbMockRepo>();
-            
+
         }
 
       

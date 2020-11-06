@@ -41,13 +41,15 @@ namespace CMDb_MGM.Data
 
             //Den loopar igenom listan som kommer in, och tar varje film i listans IMDbID och med hjälp av ovan Metod genererar vi en film av den.
             //den filmen hamnar sedermera i en ny lista. När loopen är klar så returneras den nya filmlistan.
-            
-            foreach (MovieDTO x in listOfID)
-            {
-                MovieDTO movie = await GetMovieByID(x.IMDbID);
-                movielist.Add(movie);
-            };
+            List<Task> tasks = new List<Task>();
 
+            foreach (MovieDTO x in listOfID)            
+            {
+                var movie = GetMovieByID(x.IMDbID);
+                tasks.Add(movie);
+                movielist.Add(movie.Result);
+            };
+            await Task.WhenAll(tasks);
             return movielist;
         }
 

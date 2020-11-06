@@ -1,0 +1,101 @@
+﻿@media only screen and (max-width: 425px) {
+    /*-----GLOBAL-----*/
+    h1 {
+        font-size: 3vw;
+    }
+
+    p {
+        font-size: 2vw;
+    }
+
+    /*-----SLIDESHOW-----*/
+    #movie-img {
+        width: 100px;
+        height: 150px;
+        border-radius: 5px 0 0 5px;    }
+
+
+    /*-------Searchresults------*/
+
+    #result-container {
+        width: 90%;
+        margin: 0 3% 0 5%;
+        height: auto;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .result-img {
+        width: 80%;
+        padding-left: 20%;
+        padding-bottom: 3%;
+        padding-top: 3%;
+    }
+  
+
+  
+
+    /*-------Movieresult---------*/
+
+    #movie-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: -1% 10% 0 10%;
+    }
+    .poster {
+       text-align: center;
+
+    }
+
+    .poster-img {
+        width: 50%;
+        border-radius: 5px;
+        border: 2.5px solid #8C7848;
+        box-shadow: 0px 5px 15px -5px #8C7848;
+    }
+
+    #movie-description {       
+        padding: 0;        
+    }
+
+    .description-item{
+        text-align: center;       
+    }
+
+    #description-like {
+        width: 100%;
+        align-content:center;
+        align-items: center;
+        text-align: center;
+        justify-content:center;
+        justify-items:center;
+
+    }
+
+    #critics {
+        
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .plot-txt, .score{
+        font-size: 2.5vw;
+    }
+
+    #numberoflikes, #numberofdislikes {
+        font-size: 2.5vw;
+    }
+
+    /*-------ERROR------*/
+    #lionel-container {
+     
+        padding-left: 10%
+    }
+
+    #lionel-img {
+        width: 80%;
+    }
+       
+}

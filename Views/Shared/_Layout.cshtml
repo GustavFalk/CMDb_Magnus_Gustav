@@ -6,7 +6,7 @@
     <title>CMDb - Best Database EVER</title>
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <link type="text/css" rel="stylesheet" href="/css/stylesheet.css?v=<?=time();?>">
-    
+    <link type="text/css" rel="stylesheet" href="/css/MobileCss.css?v=<?=time();?>">
 
 
 
@@ -20,7 +20,7 @@
         <div id="search-bar">
             @using (@Html.BeginForm("Index", "SearchResult"))
             {
-                <input type="search" id="search-field" name="search" placeholder="Find a movie..." size="50">
+                <input type="search" id="search-field" name="search" placeholder="Find a movie..." >
                 <button type="submit" id="submit-btn" name="search-btn">Search </button>}
         </div>
 

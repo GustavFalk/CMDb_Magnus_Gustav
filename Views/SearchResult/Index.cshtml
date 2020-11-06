@@ -1,15 +1,15 @@
 ﻿@model CMDb_MGM.Models.ViewModels.SearchResultViewModel
     <div id="result-container">
         <div class="search-result">
-            <p style="font-size: 0.75vw;"><b><i>SEARCH RESULT...</i></b></p>
+            <p><b><i>SEARCH RESULT...</i></b></p>
         </div>
         @foreach (var movie in Model.MovieResults)
         {
          <a class="result-item" href=@Url.Action("Index", "MovieInfo", new { id = movie.IMDbID }, null )>
          <div class="result-poster"><img class="result-img" src="@movie.Poster"></div>
          <div class="result-info">
-            <h1 style="font-size:1.5vw;">@movie.Title </h1>
-            <p style="font-size:1vw;">@movie.Rated | @movie.Runtime | @movie.Genre | @movie.Released</p>
+            <h1>@movie.Title </h1>
+            <p>@movie.Rated | @movie.Runtime | @movie.Genre | @movie.Released</p>
          </div>
 
          </a>
