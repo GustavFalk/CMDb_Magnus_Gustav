@@ -20,13 +20,13 @@ namespace CMDb_MGM
             services.AddControllersWithViews();
             //--Repon--//
 
-            services.AddScoped<IOMDbRepo, OMDbRepo>();
-            services.AddScoped<ICMDbRepo, CMDbRepo>();
+            //services.AddScoped<IOMDbRepo, OMDbRepo>();
+            //services.AddScoped<ICMDbRepo, CMDbRepo>();
 
             //--Mockrepon--//
 
-            //services.AddScoped<IOMDbRepo, OMDbMockRepo>();
-            //services.AddScoped<ICMDbRepo, CMDbMockRepo>();
+            services.AddScoped<IOMDbRepo, OMDbMockRepo>();
+            services.AddScoped<ICMDbRepo, CMDbMockRepo>();
 
         }
 
